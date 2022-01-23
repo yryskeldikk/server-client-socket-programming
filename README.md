@@ -7,11 +7,11 @@
 
 The server file client.py is written in Python 3 (suggested version >= 3.5.0). You can run the client by the following command:
 
-python client.py
+   python client.py
 
 or
 
-python3 client.py
+   python3 client.py
 
 Special Notes for the client:
 1. When you run the client program, you can connect to the server by typing the IP address, or ‘localhost’ and pressing Enter to send it to the server. 

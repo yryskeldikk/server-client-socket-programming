@@ -48,9 +48,6 @@ or
     python3 server.py
 
 
-Special Notes for the server: 
-
-1. Generally speaking, TCP packets sent by the server should only contain one particular word or one line, e.g. "SUCCESS" or "ERROR: the file does not exist" or "xxxxxxxxxxxxxxxxx" (the first line of your downloading file). However, you might encounter a case where the packet sent by server contains the content of two or more packets, e.g. "SUCCESSxxxxxxxxxxxxxxxxx". This is because the [Nagle's algorithm](https://en.wikipedia.org/wiki/Nagle%27s_algorithm) used by Python's TCP protocol automatically combines small TCP packets that were sent in a short time. To avoid such cases, a simple solution is to let the server sleep for some time after sending each packet. That's why there is a time.sleep(SENDING_COOLDOWN) command after each send() function in the server's source code. The default SENDING_COOLDOWN value is set to 0.1 second. This value is enough when both server and client are running on the same computer. But when they were executed on two computers, letting the server sleep for 0.1 second might not be enough to solve the problem (this depends on the delay between the two computers). If you encounter such cases, you could change the default value of SENDING_COOLDOWN to a larger value, e.g. 0.5 second or 1 second. SENDING_COOLDOWN is defined at line 6 of server.py.
 
 
 

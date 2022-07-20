@@ -1,5 +1,4 @@
-# server-client_remoteFileStorageSystem
-
+# Server - Client Remote File Storage System
 
 # Instructions
 
